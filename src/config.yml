@@ -9,6 +9,11 @@ bully_block: true
 swear_deny_message: AntiBully has blocked your message as you have swore in it, Please reffrain from swearing!
 bully_deny_message: AntiBully has blocked your message as you have said a blocked word!
 
+staff:
+    - StaffMember1
+    - StaffMember2
+    - StaffMember3    
+
 bully_muted:
     - Bully1
     - Bully2
