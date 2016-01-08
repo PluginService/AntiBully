@@ -1,3 +1,15 @@
 # Config for AntiBully
 
-### W.I.P ###
+server_name: ServerName
+
+server_ip: mc.serverip.com
+
+swear_block: true
+bully_block: true
+swear_deny_message: AntiBully has blocked your message as you have swore in it, Please reffrain from swearing!
+bully_deny_message: AntiBully has blocked your message as you have said a blocked word!
+
+bully_muted:
+    - Bully1
+    - Bully2
+    - Bully3
