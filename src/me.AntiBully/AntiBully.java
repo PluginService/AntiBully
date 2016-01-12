@@ -27,8 +27,8 @@ public class AntiBully extends JavaPlugin implements Listener
     {
      getLogger().info("AntiBully has been disabled! D:");
     }
-     public static final List<String> SWEAR_LIST = Arrays.asList("fuck", "rape", "pussy", "pu$$y", "fucking", "asshole", "hell", "dam", "fuk", "ass", "bitch");
-     public static final List<String> BULLY_LIST = Arrays.asList("idiot", "twat", "stupid", "hacker", "haxor", "");
+     public static final List<String> SWEAR_LIST = Arrays.asList("INSERT WORDS HERE");
+     public static final List<String> BULLY_LIST = Arrays.asList("INSERT WORDS HERE");
     
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) 
