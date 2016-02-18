@@ -9,12 +9,18 @@ bully_block: true
 swear_deny_message: AntiBully has blocked your message as you have swore in it, Please reffrain from swearing!
 bully_deny_message: AntiBully has blocked your message as you have said a blocked word!
 
+#They can bypass all blocks (Trusted staff only)
 staff:
     - StaffMember1
     - StaffMember2
     - StaffMember3    
 
+#Permenently mutes a player until they are removed (Perm ban mute)
 bully_muted:
     - Bully1
     - Bully2
     - Bully3
+
+#Blocked words
+blocked_words:
+    - Word_1
