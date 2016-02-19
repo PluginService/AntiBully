@@ -1,10 +1,7 @@
 package me.AntiBully;
 
-import java.util.Arrays;
-import java.util.List;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -13,9 +10,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AntiBully extends JavaPlugin implements Listener 
-{
-    public static final List<String> LIST_1 = Arrays.asList();
-
+{   
     @Override
     public void onEnable()
     {
@@ -27,24 +22,24 @@ public class AntiBully extends JavaPlugin implements Listener
     {
      getLogger().info("AntiBully has been disabled! D:");
     }
-     public static final List<String> SWEAR_LIST = Arrays.asList("INSERT WORDS HERE");
-     public static final List<String> BULLY_LIST = Arrays.asList("INSERT WORDS HERE");
     
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) 
     {
-            final Player player = event.getPlayer();
+            final Player p = event.getPlayer();
             String message = event.getMessage().trim();   
+            ConfigManager cm = ConfigManager.getConfig(p);
             
-            if(message.contains((CharSequence) SWEAR_LIST)) 
+            if (!cm.exists())
             {
-              player.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_RED + "Anti" + ChatColor.RED + "Bully" + ChatColor.DARK_GRAY + "] " + " AntiBully has blocked your message as you have swore!");
-              event.setCancelled(true);
+            FileConfiguration f = cm.getConfig();
+            
+            f.addDefault("blocked_words", "ADD THEM HERE");
             }
             
-            if(message.contains((CharSequence) BULLY_LIST)) 
+            if (!cm.getConfig().getString("staff").equals(p.getName()) && message.contains(cm.getConfig().getString("blocked_words"))) 
             {
-              player.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_RED + "Anti" + ChatColor.RED + "Bully" + ChatColor.DARK_GRAY + "] " + " AntiBully has blocked your message as you have said a blocked word!.");
+              p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_RED + cm.getConfig().getString("server_name") + ChatColor.DARK_GRAY + "] " + " AntiBully has blocked your message as you have said a blocked word!.");
               event.setCancelled(true);
             }
     }
