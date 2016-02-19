@@ -1,1 +1,25 @@
-
+ name: AntiBully
+ version: 1.0.0
+ description: This is a plugin incase you have people being bullied! D=
+ author: DUFC_Liam
+ authors: [] 
+ 
+ main: me.AntiBully.AntiBully
+ database: false
+ depend: []
+ 
+ commands:
+   BLANK:
+     description: BLANK
+     aliases: []
+     permission: TEST.Test1
+     usage: Syntax error! Simply type /&lt;command&gt; to ignite yourself.
+     
+ permissions:
+   TEST.*:
+     description: BLANK
+     children:
+       TEST.1: true
+   TEST.1:
+     description: BLANK
+     default: op
