@@ -36,7 +36,7 @@ public class AntiBully extends JavaPlugin implements Listener
             
             f.addDefault("blocked_words", "ADD THEM HERE");
             }
-            
+             
             if (!cm.getConfig().getString("staff").equals(p.getName()) && message.contains(cm.getConfig().getString("blocked_words"))) 
             {
               p.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.DARK_RED + cm.getConfig().getString("server_name") + ChatColor.DARK_GRAY + "] " + " AntiBully has blocked your message as you have said a blocked word!.");
