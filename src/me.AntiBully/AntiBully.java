@@ -22,7 +22,7 @@ public class AntiBully extends JavaPlugin implements Listener
     {
      getLogger().info("AntiBully has been disabled! D:");
     }
-    
+     
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerChat(AsyncPlayerChatEvent event) 
     {
